@@ -1,0 +1,6 @@
+DIRECTORY
+	CD			- Aktualní cesta
+	DIR 		- list obsahu složky
+	CD ..		- navrat o jednu složku zpět
+	CD X + tab 	- doplní název souboru - autofill
+	cls			- clean screen
