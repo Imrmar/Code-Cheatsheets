@@ -1,0 +1,50 @@
+PYTHON PRIKAZY
+CMD -> PYTHON mezera NAZEV_SKRIPTU
+
+TYPY objektů ---------------------------------------------------------------------------------------
+	type() - zjistime typ objektu
+	float(),int() -> precastuje cislo na dany typ
+	
+INPUT OUTPUT ---------------------------------------------------------------------------------------
+	print() - vytiskne  
+	input("Type something.. ") -> prevezme input, ktery napisu do commandliny
+
+POCITANI -------------------------------------------------------------------------------------------
+	i//j - vrati cele cislo po deleni, bez desetin
+	i%j - vrati zbytek po deleni
+	i**j - mocnina
+	2*2 = 4
+	2.0*2 = 4.0 - python preferuje vyssi presnost
+	X = 23
+	X == 0 - equal -> dve zavorky porovnani
+	X != 0 - not equal 
+	
+SYNTAXE --------------------------------------------------------------------------------------------
+---------
+	ELSE IF
+		IF <condition>:
+			<expresion>
+			<expresion>
+			
+		ELIF <condition>:
+			<expresion>
+			<expresion>
+		ELSE:
+			<expresion>
+			<expresion>
+----------
+	WHILE <condition>:  -> pokavad je podminka false, vyhodnoti se "prvni" vnitrni expresina, pokud True, vyhodnoti se zaverecna
+			<expresion>
+		<expresion>
+----------
+	FOR n in range(5):  -> n < 5 -> 0,1,2,3,4
+		print(n)
+		
+	FOR n in range(7:10) -> 7,8,9
+	
+	FOR n in range(5,11,2) -> 5,7,9
+	
+TEXT WORK --------------------------------------------------------------------------------------------
+	'ERIC'[1] = e
+	'ERIC'[1:3] = ri
+	'ERIC'[:3] = eri
