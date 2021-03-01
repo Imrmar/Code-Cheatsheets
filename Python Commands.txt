@@ -11,9 +11,9 @@ CMD -> PYTHON mezera NAZEV_SKRIPTU
 TYPY objektů ---------------------------------------------------------------------------------------
 	type() - zjistime typ objektu
 	float(),int() -> precastuje cislo na dany typ
-	
+
 INPUT OUTPUT ---------------------------------------------------------------------------------------
-	print() - vytiskne  
+	print() - vytiskne
 	input("Type something.. ") -> prevezme input, ktery napisu do commandliny
 
 POCITANI -------------------------------------------------------------------------------------------
@@ -24,15 +24,15 @@ POCITANI -----------------------------------------------------------------------
 	2.0*2 = 4.0 - python preferuje vyssi presnost
 	X = 23
 	X == 0 - equal -> dve zavorky porovnani
-	X != 0 - not equal 
-	
+	X != 0 - not equal
+
 SYNTAXE --------------------------------------------------------------------------------------------
 ---------
 	ELSE IF
 		IF <condition>:
 			<expresion>
 			<expresion>
-			
+
 		ELIF <condition>:
 			<expresion>
 			<expresion>
@@ -46,11 +46,11 @@ SYNTAXE ------------------------------------------------------------------------
 ----------
 	FOR n in range(5):  -> n < 5 -> 0,1,2,3,4
 		print(n)
-		
+
 	FOR n in range(7:10) -> 7,8,9
-	
+
 	FOR n in range(5,11,2) -> 5,7,9
-	
+
 TEXT WORK --------------------------------------------------------------------------------------------
 	'ERIC'[1] = e
 	'ERIC'[1:3] = ri
@@ -68,12 +68,31 @@ FORMAT
 	print("This is string {}".format("XXXX")) -> This is string XXXX  	- .format() insert its input into{}
 	print("This" {} {} {}".format("is", "string","xxx")) 				- we can insert multiple strings
 	print("This {3} {1} {2}".format("is", "string","xxx")) 				- This xxx is string
-	print("This {x} {y} {z}".format(x="is", y="string",z="xxx")) 	
+	print("This {x} {y} {z}".format(x="is", y="string",z="xxx"))
 
 	Format with float {value:width.precision f} - width is like char(10) -> empty characters filled with whitespace
 	x =0.123456123456
 	print("This {x:1.3 f}".format(x))
 
-	print(f"string {}") - Alternative to format (same funcitonality with different syntax) 
+	print(f"string {}") - Alternative to format (same funcitonality with different syntax)
 	x = Martin
 	print(f"His name is {x}") -> His name is Martin
+
+
+
+
+LIST WORK ---------------------------------------------------------------------------------------------
+		my_list = ["Cat", "Dog", "Turtle"]
+		my_list[1:] = ["Dog", "Turtle"]
+
+	APEND()
+		my_list.append("Shark") -> ["Cat", "Dog", "Turtle", "Shark"]
+		old_list = ["Lion"]
+		new_list = my_list + old_list
+	POP()
+		my_list.pop()		-> remove last item of list
+		my_list.pop(2)		-> renive item with index 2
+	SORT()
+		my_list.sort()		-> sort items alphabeticaly
+	REVERSE()
+		my_list.reverse()	-> reverse all index 1 <-> 9, 2 <-> 8
