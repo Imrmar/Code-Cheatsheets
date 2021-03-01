@@ -1,3 +1,10 @@
+PYTHON datové TYPY
+
+	List (list) 		- [10,"hello",200.3]				- Ordere sequence of obejcts
+	Dictionary (dict) 	- {"mykey":"123","name":"Frankie"}  - Unordered Key:Value pair
+	Tuples (tup)		- (10,"hello",200.3)				- Ordered immutable (neměnný) sequence of objects
+	Sets (set)			- {"a","b"}							- Unordered collection of unique objects
+
 PYTHON PRIKAZY
 CMD -> PYTHON mezera NAZEV_SKRIPTU
 
@@ -48,3 +55,25 @@ TEXT WORK ----------------------------------------------------------------------
 	'ERIC'[1] = e
 	'ERIC'[1:3] = ri
 	'ERIC'[:3] = eri
+	'Education'[0:10:2] = EUAIN
+	'ERIC'[::-1] = CIRE
+
+	x = "Eric is best"
+
+SPLIT
+	x.split() = ["Eric","is","best"]   -> splits string based on whitespaces
+	x.split(e) = ["ric is b", "st"]		-> splits based on  "e"
+
+FORMAT
+	print("This is string {}".format("XXXX")) -> This is string XXXX  	- .format() insert its input into{}
+	print("This" {} {} {}".format("is", "string","xxx")) 				- we can insert multiple strings
+	print("This {3} {1} {2}".format("is", "string","xxx")) 				- This xxx is string
+	print("This {x} {y} {z}".format(x="is", y="string",z="xxx")) 	
+
+	Format with float {value:width.precision f} - width is like char(10) -> empty characters filled with whitespace
+	x =0.123456123456
+	print("This {x:1.3 f}".format(x))
+
+	print(f"string {}") - Alternative to format (same funcitonality with different syntax) 
+	x = Martin
+	print(f"His name is {x}") -> His name is Martin
