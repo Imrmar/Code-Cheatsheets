@@ -79,20 +79,43 @@ FORMAT
 	print(f"His name is {x}") -> His name is Martin
 
 
-
-
 LIST WORK ---------------------------------------------------------------------------------------------
-		my_list = ["Cat", "Dog", "Turtle"]
-		my_list[1:] = ["Dog", "Turtle"]
+	my_list = ["Cat", "Dog", "Turtle"]
+	my_list[1:] = ["Dog", "Turtle"]
 
-	APEND()
-		my_list.append("Shark") -> ["Cat", "Dog", "Turtle", "Shark"]
-		old_list = ["Lion"]
-		new_list = my_list + old_list
-	POP()
-		my_list.pop()		-> remove last item of list
-		my_list.pop(2)		-> renive item with index 2
-	SORT()
-		my_list.sort()		-> sort items alphabeticaly
-	REVERSE()
-		my_list.reverse()	-> reverse all index 1 <-> 9, 2 <-> 8
+APEND()
+	my_list.append("Shark") -> ["Cat", "Dog", "Turtle", "Shark"]
+	old_list = ["Lion"]
+	new_list = my_list + old_list
+POP()
+	my_list.pop()		-> remove last item of list
+	my_list.pop(2)		-> renive item with index 2
+SORT()
+	my_list.sort()		-> sort items alphabeticaly
+REVERSE()
+	my_list.reverse()	-> reverse all index 1 <-> 9, 2 <-> 8
+
+
+DICTIONARY WORK ------------------------------------------------------------------------------------
+	my_dict = {'apple':1.99,"milk":5.80}
+	my_dict = ["apple"] = 1.99
+	my_dict_2 = {'key1':123,'key2':[12,23,33],'key3':['item0','item1','item2']} - list or another dict can be inside dictionary
+	my_dict["bread"] = 3.20		- adding new element
+	my_dict["apple"] = 2.29		- we can reassign values
+ITEMS()		
+	my_dict.ites() -> {'apple':1.99,"milk":5.80} 	-it will show all keays
+VALUES()			
+	my_dict.values()	-> (1.99,5.80)
+
+
+TUPLES WORK ---------------------------------------------------------------------------------------
+	- Immutable - cannot be changed
+	- Great for data integrity 
+	my_tuple  = ('one',2)
+	my_tuple(1,2,3)		
+LEN()
+	my_tuple.len()=3
+INDEX()
+	my_tuple.index("one") = 0  		- returns index position
+COUNT()
+	my_tuple.count(2)	= 1			- count of parameters in tupples
