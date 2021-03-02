@@ -26,30 +26,6 @@ POCITANI -----------------------------------------------------------------------
 	X == 0 - equal -> dve zavorky porovnani
 	X != 0 - not equal
 
-SYNTAXE --------------------------------------------------------------------------------------------
----------
-	ELSE IF
-		IF <condition>:
-			<expresion>
-			<expresion>
-
-		ELIF <condition>:
-			<expresion>
-			<expresion>
-		ELSE:
-			<expresion>
-			<expresion>
-----------
-	WHILE <condition>:  -> pokavad je podminka false, vyhodnoti se "prvni" vnitrni expresina, pokud True, vyhodnoti se zaverecna
-			<expresion>
-		<expresion>
-----------
-	FOR n in range(5):  -> n < 5 -> 0,1,2,3,4
-		print(n)
-
-	FOR n in range(7:10) -> 7,8,9
-
-	FOR n in range(5,11,2) -> 5,7,9
 
 TEXT WORK --------------------------------------------------------------------------------------------
 	'ERIC'[1] = e
@@ -136,6 +112,7 @@ DIRECTIORY
 	C:\\Users\\Martin\\Documents -> double backslash
 
 WRITE
+	my_file.write("this is the new string")
 	%%writefile myfile.txt
 		This is test string in file
 	
@@ -150,3 +127,41 @@ READ()
 
 READLINES()
 	- each line is printed as single line (keep the strucutre of txt file)
+
+CLOSE()
+	- after opening file, to let python stop working with it
+
+WITH()
+	- resource manager, it will open and close file for us
+	with open('myfile.txt') as my_new_file:
+		contets = my_new_file.read()
+
+	with open('myfile.txt', mode='r') -> only read
+	with open('myfile.txt', mode='w') -> only write - recreate the file
+	with open('myfile.txt', mode='a') -> only append new text
+
+
+IF ELSE  --------------------------------------------------------------------------------------------
+	ELSE IF
+		IF <condition>:
+			<expresion>
+			return True
+
+		ELIF <condition>:
+			<expresion>
+			return False
+		ELSE:
+			<expresion>
+			<expresion>
+WHILE LOOP-------------------------------------------------------------------------------------------
+	WHILE <condition>:  -> pokavad je podminka false, vyhodnoti se "prvni" vnitrni expresina, pokud True, vyhodnoti se zaverecna
+			<expresion>
+		<expresion>
+
+FOR N IN LOOP-------------------------------------------------------------------------------------------
+	FOR n in range(5):  -> n < 5 -> 0,1,2,3,4
+		print(n)
+
+	FOR n in range(7:10) -> 7,8,9
+
+	FOR n in range(5,11,2) -> 5,7,9
