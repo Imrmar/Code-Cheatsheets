@@ -119,3 +119,34 @@ INDEX()
 	my_tuple.index("one") = 0  		- returns index position
 COUNT()
 	my_tuple.count(2)	= 1			- count of parameters in tupples
+
+
+SET WORK ------------------------------------------------------------------------------------
+	- only unique values can be stored
+	- no ordering
+	my_set = {1}
+	my_set.add(2) -> {1,2}
+	my_list = [1,2,3,5,5,5,4,2,3]
+	set(my_list) -> {1,2,3,5,4}
+	set("Mississipi") -> {"M","i","s","p"}
+
+
+FILE WORK -----------------------------------------------------------------------------------
+DIRECTIORY
+	C:\\Users\\Martin\\Documents -> double backslash
+
+WRITE
+	%%writefile myfile.txt
+		This is test string in file
+	
+OPEN()
+	- need to be in same folder as is pwd
+
+READ() 
+	- need to be in same folder as is pwd
+	read(myfile.txt) - "This is test string in file"
+	- in case of re-reading the file, we need to put cursor to 0 position
+	myfile.seek(0)
+
+READLINES()
+	- each line is printed as single line (keep the strucutre of txt file)
