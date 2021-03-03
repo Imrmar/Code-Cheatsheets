@@ -1,3 +1,8 @@
+Klávesové zkratky
+
+alt+f []
+alt+b {}
+
 PYTHON datové TYPY
 
 	List (list) 		- [10,"hello",200.3]				- Ordere sequence of obejcts
