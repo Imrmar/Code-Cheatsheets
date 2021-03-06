@@ -3,34 +3,59 @@ Klávesové zkratky
 alt+f []
 alt+b {}
 
-PYTHON datové TYPY
-
-	List (list) 		- [10,"hello",200.3]				- Ordere sequence of obejcts
-	Dictionary (dict) 	- {"mykey":"123","name":"Frankie"}  - Unordered Key:Value pair
-	Tuples (tup)		- (10,"hello",200.3)				- Ordered immutable (neměnný) sequence of objects
-	Sets (set)			- {"a","b"}							- Unordered collection of unique objects
-
-PYTHON PRIKAZY
+----------------------------------------------------------------
+USEFUL OPERATORS--------------------------------------------------
+----------------------------------------------------------------
 CMD -> PYTHON mezera NAZEV_SKRIPTU
-
-TYPY objektů ---------------------------------------------------------------------------------------
-	type() - zjistime typ objektu
-	float(),int() -> precastuje cislo na dany typ
 
 INPUT OUTPUT ---------------------------------------------------------------------------------------
 	print() - vytiskne
-	input("Type something.. ") -> prevezme input, ktery napisu do commandliny
+	result = input("Type something.. ") 	# prevezme input, ktery napisu do commandliny
+
+RANGE
+	list(range(0,11,2))  # will create list from 0- 11 with step 2
+
+ENUMERATE
+	word = 'abcde'
+	for item in enumerate(word):    # it will create tuples with index and character
+		print(item)
+
+		(0, 'a')
+		(1, 'b') etc
+
+ZIP 
+	my_list = [1,2,3]
+	my_list2 =[a,b,c]
+
+	for item in zip(my_list,my_list2):		# it will zip two list into touples (it will take length of shortest list)
+		print(item)
+
+		(1, 'a')
+		(2, 'b') etc
+
+IN
+	'a' in 'monkey'
+	'mykey' in {'mykey':345}
+
 
 POCITANI -------------------------------------------------------------------------------------------
-	i//j - vrati cele cislo po deleni, bez desetin
-	i%j - vrati zbytek po deleni
-	i**j - mocnina
+	i//j 			# vrati cele cislo po deleni, bez desetin
+	i%j 			# vrati zbytek po deleni
+	i**j 			# mocnina
 	2*2 = 4
-	2.0*2 = 4.0 - python preferuje vyssi presnost
+	2.0*2 = 4.0 	# python preferuje vyssi presnost
 	X = 23
-	X == 0 - equal -> dve zavorky porovnani
-	X != 0 - not equal
+	X == 0 			# equal -> dve zavorky porovnani
+	X != 0 			# not equal
 
+
+------------------------------------------------------------------
+PYTHON datové TYPY------------------------------------------------
+------------------------------------------------------------------
+	List (list) 		- [10,"hello",200.3]				# Ordere sequence of obejcts
+	Dictionary (dict) 	- {"mykey":"123","name":"Frankie"}  # Unordered Key:Value pair
+	Tuples (tup)		- (10,"hello",200.3)				# Ordered immutable (neměnný) sequence of objects
+	Sets (set)			- {"a","b"}							-# Unordered collection of unique objects
 
 TEXT WORK --------------------------------------------------------------------------------------------
 	'ERIC'[1] = e
@@ -42,22 +67,22 @@ TEXT WORK ----------------------------------------------------------------------
 	x = "Eric is best"
 
 SPLIT
-	x.split() = ["Eric","is","best"]   -> splits string based on whitespaces
-	x.split(e) = ["ric is b", "st"]		-> splits based on  "e"
+	x.split() = ["Eric","is","best"]   # splits string based on whitespaces
+	x.split(e) = ["ric is b", "st"]		# splits based on  "e"
 
 FORMAT
-	print("This is string {}".format("XXXX")) -> This is string XXXX  	- .format() insert its input into{}
-	print("This" {} {} {}".format("is", "string","xxx")) 				- we can insert multiple strings
-	print("This {3} {1} {2}".format("is", "string","xxx")) 				- This xxx is string
+	print("This is string {}".format("XXXX")) # This is string XXXX  	- .format() insert its input into{}
+	print("This {} {} {}".format("is", "string","xxx")) 				# we can insert multiple strings
+	print("This {3} {1} {2}".format("is", "string","xxx")) 				# This xxx is string
 	print("This {x} {y} {z}".format(x="is", y="string",z="xxx"))
 
-	Format with float {value:width.precision f} - width is like char(10) -> empty characters filled with whitespace
+	Format with float {value:width.precision f} - width is like char(10) # empty characters filled with whitespace
 	x =0.123456123456
 	print("This {x:1.3 f}".format(x))
 
-	print(f"string {}") - Alternative to format (same funcitonality with different syntax)
+	print(f"string {}") # Alternative to format (same funcitonality with different syntax)
 	x = Martin
-	print(f"His name is {x}") -> His name is Martin
+	print(f"His name is {x}") # His name is Martin
 
 
 LIST WORK ---------------------------------------------------------------------------------------------
@@ -69,20 +94,32 @@ APEND()
 	old_list = ["Lion"]
 	new_list = my_list + old_list
 POP()
-	my_list.pop()		-> remove last item of list
-	my_list.pop(2)		-> renive item with index 2
+	my_list.pop()		# remove last item of list
+	my_list.pop(2)		# renive item with index 2
 SORT()
-	my_list.sort()		-> sort items alphabeticaly
+	my_list.sort()		# sort items alphabeticaly
 REVERSE()
-	my_list.reverse()	-> reverse all index 1 <-> 9, 2 <-> 8
+	my_list.reverse()	# reverse all index 1 <-> 9, 2 <-> 8
 
+
+LIST COMPREHANSION -------------------------------------------------------------------------------
+	# to create list from string
+	mystring = 'hello'
+	mylist = [letter for letter in mystring] 		# it comes from for letter in mystring: mylist.append(letter)
+	mylist = [num for num in range(0,11)]
+	mylist = [num**2 for num in range(0,11)]
+
+	mylist = [x*y for x in [1,2,3] for y in [1,10,1000]]  #creates lists
+IF ELESE COMPREHANSION
+
+	results = [x if x%2==0 else 'ODD' for x in range(0,11)]
 
 DICTIONARY WORK ------------------------------------------------------------------------------------
 	my_dict = {'apple':1.99,"milk":5.80}
 	my_dict = ["apple"] = 1.99
-	my_dict_2 = {'key1':123,'key2':[12,23,33],'key3':['item0','item1','item2']} - list or another dict can be inside dictionary
-	my_dict["bread"] = 3.20		- adding new element
-	my_dict["apple"] = 2.29		- we can reassign values
+	my_dict_2 = {'key1':123,'key2':[12,23,33],'key3':['item0','item1','item2']} # list or another dict can be inside dictionary
+	my_dict["bread"] = 3.20		# adding new element
+	my_dict["apple"] = 2.29		# we can reassign values
 ITEMS()		
 	my_dict.ites() -> {'apple':1.99,"milk":5.80} 	-it will show all keays
 VALUES()			
@@ -90,21 +127,21 @@ VALUES()
 
 
 TUPLES WORK ---------------------------------------------------------------------------------------
-	- Immutable - cannot be changed
-	- Great for data integrity 
+	# Immutable - cannot be changed
+	# Great for data integrity 
 	my_tuple  = ('one',2)
 	my_tuple(1,2,3)		
 LEN()
 	my_tuple.len()=3
 INDEX()
-	my_tuple.index("one") = 0  		- returns index position
+	my_tuple.index("one") = 0  		# returns index position
 COUNT()
-	my_tuple.count(2)	= 1			- count of parameters in tupples
+	my_tuple.count(2)	= 1			# count of parameters in tupples
 
 
 SET WORK ------------------------------------------------------------------------------------
-	- only unique values can be stored
-	- no ordering
+	# only unique values can be stored
+	# no ordering
 	my_set = {1}
 	my_set.add(2) -> {1,2}
 	my_list = [1,2,3,5,5,5,4,2,3]
@@ -114,7 +151,7 @@ SET WORK -----------------------------------------------------------------------
 
 FILE WORK -----------------------------------------------------------------------------------
 DIRECTIORY
-	C:\\Users\\Martin\\Documents -> double backslash
+	C:\\Users\\Martin\\Documents 	# double backslash
 
 WRITE
 	my_file.write("this is the new string")
@@ -122,29 +159,32 @@ WRITE
 		This is test string in file
 	
 OPEN()
-	- need to be in same folder as is pwd
+	# need to be in same folder as is pwd
 
 READ() 
-	- need to be in same folder as is pwd
+	# need to be in same folder as is pwd
 	read(myfile.txt) - "This is test string in file"
-	- in case of re-reading the file, we need to put cursor to 0 position
+	# in case of re-reading the file, we need to put cursor to 0 position
 	myfile.seek(0)
 
 READLINES()
-	- each line is printed as single line (keep the strucutre of txt file)
+	# each line is printed as single line (keep the strucutre of txt file)
 
 CLOSE()
-	- after opening file, to let python stop working with it
+	# after opening file, to let python stop working with it
 
 WITH()
 	- resource manager, it will open and close file for us
 	with open('myfile.txt') as my_new_file:
 		contets = my_new_file.read()
 
-	with open('myfile.txt', mode='r') -> only read
-	with open('myfile.txt', mode='w') -> only write - recreate the file
-	with open('myfile.txt', mode='a') -> only append new text
+	with open('myfile.txt', mode='r') 		 #only read
+	with open('myfile.txt', mode='w') 		 #only write - recreate the file
+	with open('myfile.txt', mode='a') 		 #only append new text
 
+----------------------------------------------------------------------
+CONTROL FLOW ---------------------------------------------------------
+----------------------------------------------------------------------
 
 IF ELSE  --------------------------------------------------------------------------------------------
 	ELSE IF
@@ -159,14 +199,52 @@ IF ELSE  -----------------------------------------------------------------------
 			<expresion>
 			<expresion>
 WHILE LOOP-------------------------------------------------------------------------------------------
-	WHILE <condition>:  -> pokavad je podminka false, vyhodnoti se "prvni" vnitrni expresina, pokud True, vyhodnoti se zaverecna
-			<expresion>
-		<expresion>
+	WHILE x < 5: 
+		print(x)
+		x += 1
+	ELSE:	
+		print("x is = 5")
+
 
 FOR N IN LOOP-------------------------------------------------------------------------------------------
-	FOR n in range(5):  -> n < 5 -> 0,1,2,3,4
+	FOR n in range(5):  -> n < 5 	-> 0,1,2,3,4
 		print(n)
 
-	FOR n in range(7:10) -> 7,8,9
+	FOR n in range(7:10) 			-> 7,8,9
 
-	FOR n in range(5,11,2) -> 5,7,9
+	FOR n in range(5,11,2) 			-> 5,7,9
+
+	my_list = [(1,2),(2,3),(4,5)]
+	FOR a,n in my_list:
+		print(a)
+		print(n)
+
+
+FOR loop with dictionary
+	d ={"k1":1,"k2":2,"k3":3}
+	for keyval in d.items()
+		print(keyval)				->("k1",1) ("k2":2)
+
+	for key, value in d.items()
+		print(value)				->1,2,3
+
+	for keyval in d.values()
+		print(keyval)				-> 1,2,3
+
+
+FLOW CONTROL FUNCTIONS---------------------------------------------------------------------------
+PASS 
+	for i in x:
+		pass
+		#pass will do nothing and for loop will not fail on syntax
+
+CONTINUE #Goes to top of the closest enclosing loop
+
+BREAK 	#breaks the loop of the loop 
+
+----------------------------------------------------------------------
+LIBRARIES-------------------------------------------------------------
+----------------------------------------------------------------------
+IMPORT
+	from random import shuffle 			# 'random' is name of library in python - randomy shuffle values in list
+	from random import randint			# random(0,100) - random number from range
