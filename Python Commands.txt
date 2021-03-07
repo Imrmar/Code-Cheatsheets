@@ -38,6 +38,7 @@ IN
 	'mykey' in {'mykey':345}
 
 
+
 POCITANI -------------------------------------------------------------------------------------------
 	i//j 			# vrati cele cislo po deleni, bez desetin
 	i%j 			# vrati zbytek po deleni
@@ -101,6 +102,10 @@ SORT()
 REVERSE()
 	my_list.reverse()	# reverse all index 1 <-> 9, 2 <-> 8
 
+SPLIT()
+	x.split() = ["Eric","is","best"]   # splits string based on whitespaces
+	x.split(e) = ["ric is b", "st"]		# splits based on  "e"
+
 
 LIST COMPREHANSION -------------------------------------------------------------------------------
 	# to create list from string
@@ -111,7 +116,9 @@ LIST COMPREHANSION -------------------------------------------------------------
 
 	mylist = [x*y for x in [1,2,3] for y in [1,10,1000]]  #creates lists
 IF ELESE COMPREHANSION
-
+	#one condition
+	x = [i for i in range(1,51) if i%3 ==0]
+	#two conditions
 	results = [x if x%2==0 else 'ODD' for x in range(0,11)]
 
 DICTIONARY WORK ------------------------------------------------------------------------------------
@@ -248,3 +255,44 @@ LIBRARIES-------------------------------------------------------------
 IMPORT
 	from random import shuffle 			# 'random' is name of library in python - randomy shuffle values in list
 	from random import randint			# random(0,100) - random number from range
+
+
+----------------------------------------------------------------------
+METHODS---------------------------------------------------------------
+----------------------------------------------------------------------
+https://docs.python.org/3/  #documentiation
+#methods are functions attached to an object
+
+mylist.apend(), mylist.index() # those functions are connected to a class/object
+
+mylist. -> #click on tab will show all methods
+mylist.insert -> #shift+tab will show you what the method is
+help(mylist.insert) -> # show help to the method
+
+----------------------------------------------------------------------
+FUNCTIONS-------------------------------------------------------------
+----------------------------------------------------------------------
+# standalone functions without object
+max(), min() etc.
+
+---------
+def name_of_function(name):
+	''' # multiline comment with 3 quotes
+	Docstring exlpains functions 
+	'''
+	print("Hello "+name)
+
+>> name_of_function("Karel")
+
+----------
+def add_function(num1,num2):
+	return num1+num2		#return value which can be assign to variable
+
+>> x = add_function(2,5)
+
+DEFAULT INPUT
+def say_hello(name="Default"):
+	print(f"Hello {name}")
+
+say_hello()				-> Hello Default
+say_hello("Martin")		-> Hello Martin
