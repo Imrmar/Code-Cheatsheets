@@ -296,3 +296,22 @@ def say_hello(name="Default"):
 
 say_hello()				-> Hello Default
 say_hello("Martin")		-> Hello Martin
+
+
+---------------------------------------------------------------------------
+*ARGS and **KWARGS---------------------------------------------------------
+---------------------------------------------------------------------------
+
+def myfunc(*args):				#python will save all parameters as tuples inserted - we can put any number of them
+	return sum(args) * 0.05 
+
+
+def myfunc(**kwargs):			#we can use any number of key:value pairs
+	if "fruit" in kwargs:
+		print("My fruit of choice is {}".format(kwargs["fruit"]))
+	else:
+		print("I did not find any fruit here")
+
+
+def myfunc(*args,**kwargs):
+	print("I would like {} {}".format(args[0],kwargs["food"]))
