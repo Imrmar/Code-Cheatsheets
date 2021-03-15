@@ -71,6 +71,10 @@ SPLIT
 	x.split() = ["Eric","is","best"]   # splits string based on whitespaces
 	x.split(e) = ["ric is b", "st"]		# splits based on  "e"
 
+JOIN
+	" ".join(my_list) = ["It", "is", "joined"]	-> "It is joined"
+	"--".join(my_list) = ["It", "is", "joined"]	-> "It--is--joined"
+ 
 FORMAT
 	print("This is string {}".format("XXXX")) # This is string XXXX  	- .format() insert its input into{}
 	print("This {} {} {}".format("is", "string","xxx")) 				# we can insert multiple strings
