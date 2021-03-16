@@ -37,6 +37,20 @@ IN
 	'a' in 'monkey'
 	'mykey' in {'mykey':345}
 
+MAP
+	my_list = [1,2,3,4,5]
+	square() #my function to create squere from number
+	list(map(square,my_list)) # this will apply function to all elements of the list
+
+FILTER
+	my_list = [1,2,3,4,5]
+	check_even() #my funciton to check even numbers
+	list(filter(check_even,my_list))  #filter all even numbers out
+
+LAMBA FUNCTIONS
+	lambda num: num**2 # nameless function, right side is returned automatical
+					   # can be used in MAP or FILTER
+	list(map(lambda num: num**2),mylist)
 
 
 POCITANI -------------------------------------------------------------------------------------------
