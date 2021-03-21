@@ -104,7 +104,9 @@ FORMAT
 	print(f"His name is {x}") # His name is Martin
 
 
+--------------------------------------------------------------------------------
 LIST WORK ---------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 	my_list = ["Cat", "Dog", "Turtle"]
 	my_list[1:] = ["Dog", "Turtle"]
 
@@ -139,7 +141,10 @@ IF ELESE COMPREHANSION
 	#two conditions
 	results = [x if x%2==0 else 'ODD' for x in range(0,11)]
 
+
+--------------------------------------------------------------------------------
 DICTIONARY WORK ------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 	my_dict = {'apple':1.99,"milk":5.80}
 	my_dict = ["apple"] = 1.99
 	my_dict_2 = {'key1':123,'key2':[12,23,33],'key3':['item0','item1','item2']} # list or another dict can be inside dictionary
@@ -149,9 +154,12 @@ ITEMS()
 	my_dict.ites() -> {'apple':1.99,"milk":5.80} 	-it will show all keays
 VALUES()			
 	my_dict.values()	-> (1.99,5.80)
+KEYS()
+	my_dict.ites() -> ('apple',"milk")
 
-
+--------------------------------------------------------------------------------
 TUPLES WORK ---------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 	# Immutable - cannot be changed
 	# Great for data integrity 
 	my_tuple  = ('one',2)
@@ -164,8 +172,9 @@ COUNT()
 	my_tuple.count(2)	= 1			# count of parameters in tupples
 
 
-
+--------------------------------------------------------------------------------
 SET WORK ------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 	# only unique values can be stored
 	# no ordering
 	my_set = {1}
@@ -268,13 +277,6 @@ CONTINUE #Goes to top of the closest enclosing loop
 
 BREAK 	#breaks the loop of the loop 
 
-----------------------------------------------------------------------
-LIBRARIES-------------------------------------------------------------
-----------------------------------------------------------------------
-IMPORT
-	from random import shuffle 			# 'random' is name of library in python - randomy shuffle values in list
-	from random import randint			# random(0,100) - random number from range
-
 
 ----------------------------------------------------------------------
 METHODS---------------------------------------------------------------
@@ -334,3 +336,158 @@ def myfunc(**kwargs):			#we can use any number of key:value pairs
 
 def myfunc(*args,**kwargs):
 	print("I would like {} {}".format(args[0],kwargs["food"]))
+
+
+-----------------------------------------------------------------------------
+LEGB Rule - Local, Enclosing function locals, Global, Built-in --------------
+-----------------------------------------------------------------------------
+#L: Local — Names assigned in any way within a function (def or lambda), and not declared global in that function.
+
+#E: Enclosing function locals — Names in the local scope of any and all enclosing functions (def or lambda), from inner to outer.
+
+#G: Global (module) — Names assigned at the top-level of a module file, or declared global in a def within the file.
+
+#B: Built-in (Python) — Names preassigned in the built-in names module : open, range, SyntaxError,...
+
+x = 50
+def func():
+	global x			# it will affect global variable x instead of local variable
+	print(f"y us {x}")
+
+or 
+
+x = func(x)				# resassign variable to global and is better readable
+
+
+
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+Object oriented programing --------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+#https://www.udemy.com/course/complete-python-bootcamp/learn/lecture/9478292#questions
+
+class Dog():      # classes uses camel casing 
+
+	# CLASS OBJECT ATTRIBUTS
+	# SAME FOR ANY INSTANCE OF A CLASS
+	species = "mammal"
+
+	def __init__(self, breed, age, spots): 	# it is constructor of instance of this object  
+		self.breed = breed			# and we init param1 and param2 and we use them localy
+		self.age = age			# so the instance will use local params instead global
+		self.spots = spots
+
+	def is_breed(self):			# Method (not function), since it is interaging with the class
+		#print something
+		print(self.breed)
+
+
+my_dog = Dog()   # it will create instance of class
+
+my_dog.species 	 # it will show variable of instance
+
+my_dog.is_breed()	# will call method of dogs class
+
+
+Polymorphism-----------------------------------------------------------------------
+class Dog():      
+
+	def __init__(self,name):
+		self.name = name		
+
+	def speaks(self):			# same function as cats, but works differently -> plymorphism
+		print("Haf")
+
+class Cat():      
+
+	def __init__(self,name):
+		self.name = name		
+
+	def speaks(self):
+		print("Moew")			# same function as cats, but works differently -> plymorphism
+
+
+Inheritance------------------------------------------------------------------------
+class Animal():
+
+	def __init__(self):
+		print("Animal created")
+
+	def who_am_i(self):
+		print("I am an animal")
+
+	def eat(self):
+		print("I am eating!")
+
+class Dog(Animal): 		# Class dog will ingerite all methods of Animal() class
+
+	def __init__(self):
+		Animal.__init__(self)		# creating instance of animal
+		print("Dog created")
+
+mydog = Dog()
+
+	>> Animal created
+	>> Dog created
+
+
+Special methods------------------------------------------------------------------------
+# special methods which replace known methods, such as STR(), LEN(), DEL() etc
+
+class Book:
+    def __init__(self, title, author, pages):
+        print("A book is created")
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+bk = book()		 # vytvorime instanci classy kniha
+
+    def __str__(self):		# __str__ should always return and not print
+        return "Title: %s, author: %s, pages: %s" %(self.title, self.author, self.pages)
+
+print(bk)	# vrati nam vzdy hodnotu metody __str__(self) !!!!!!!!!!!
+
+    def __len__(self):
+        return self.pages
+
+    def __del__(self):
+        print("A book is destroyed")
+
+
+----------------------------------------------------------------------
+Python packages - LIBRARIES-------------------------------------------------------------
+----------------------------------------------------------------------
+#https://www.udemy.com/course/complete-python-bootcamp/learn/lecture/9497628#overview
+
+PIP # download packages from PyPi repository and install them trough your command
+-------
+EXAMPLE
+-------
+windows cmd 
+>>pip install requests		# download and install package called "requests"
+>>pip install colorama		# some funny color font package
+>>python
+>>>from colorama import init
+>>>from colorama import Fore
+>>>print(Fore.RED + " some red text")
+
+IMPORT methods/functions			
+	from random import shuffle 			# 'random' is name of library in python - randomy shuffle values in list
+	from random import randint			# random(0,100) - random number from range
+
+Modules ------------------------------------------
+#module is py script which can be used in other scipt
+#packages is collections of modules
+
+from mymodule import my_func		# by this functionality, you can import a function from your module
+
+Packages -------------------------------------------
+# folder with modules 
+# in folders for modules is importent to create file "__init__.py"
+# to let him know that it is module folder
+
+from MyMainPackageFolder import some_module
+from MyMainPackageFolder.SubfolderPackage import some_module_2
