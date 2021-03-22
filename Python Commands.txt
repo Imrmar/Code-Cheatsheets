@@ -491,3 +491,44 @@ Packages -------------------------------------------
 
 from MyMainPackageFolder import some_module
 from MyMainPackageFolder.SubfolderPackage import some_module_2
+
+
+# normal structure of scripts is having defined functions at beginning
+# and logic of how it is run down in __name__ == "__main__"
+
+def myfunc()
+def func1()
+def func2()
+
+if __name__ == "__main__":  # if the script is called direclty ("__name__") by CMD, do following 
+	print("Script is being run directly!")
+	myfunc()
+	func1()
+	func2()
+else:
+	print("Script has been imported!")
+
+
+----------------------------------------------------------------------
+Error and Exception Handling -----------------------------------------
+----------------------------------------------------------------------
+try:	#we are going to try following code and in case of ANY error, it jumps to except
+	result = 10 + "10"	# could be results = 10 + var1 ("10")
+
+except:	#except is run in case of error
+	print("Adding integer and string is not supported")
+else:	#in case of NO error, run this
+	print("Add went well!")
+	print(result)
+
+------ #https://docs.python.org/3/library/exceptions.html
+try:
+	f = open("testfile", "w")
+	f.write("something")
+
+except TypeError:	# we can define specific error
+	print("Wrong type operations!")
+except OSError:
+	print("Hey you have an OS Error")
+finally:			# it will print after all exception
+	print("everything runs fine")
